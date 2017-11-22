@@ -5,7 +5,9 @@ import com.deepai.moispano.App;
 import com.deepai.moispano.base.BasePresenter;
 import com.deepai.moispano.cache.UserCache;
 import com.deepai.moispano.contact.WorkListContact;
+import com.deepai.moispano.data.entry.BannerBean;
 import com.deepai.moispano.data.entry.WorkBean;
+import com.deepai.moispano.model.BannerModel;
 import com.deepai.moispano.model.WorkListModel;
 import com.deepai.moispano.mvp.IModel;
 import com.deepai.moispano.view.fragments.QuyingFragment;
@@ -65,16 +67,34 @@ public class WorkListPresenter extends BasePresenter<QuyingFragment> implements 
         });
     }
 
+    @Override
+    public void getBannerData() {
+        ((BannerModel)getiModelMap().get("getBannerList")).getData(new BannerModel.DataListener<List<BannerBean>>(){
+
+            @Override
+            public void successInfo(List<BannerBean> result) {
+                getIView().hideLoading();
+                getIView().setBannerData(result);
+            }
+
+            @Override
+            public void failInfo(String result) {
+                getIView().hideLoading();
+                getIView().showError(result);
+            }
+        });
+    }
 
     @Override
     public HashMap<String, IModel> getiModelMap() {
-        return loadModelMap(new WorkListModel());
+        return loadModelMap(new WorkListModel(),new BannerModel());
     }
 
     @Override
     public HashMap<String, IModel> loadModelMap(IModel... models) {
         HashMap<String, IModel> map = new HashMap<>();
         map.put("getWorkList", models[0]);
+        map.put("getBannerList", models[1]);
         return map;
     }
 }

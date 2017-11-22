@@ -2,8 +2,10 @@ package com.deepai.moispano.data.rest;
 
 
 import com.deepai.moispano.base.BaseHttpResult;
+import com.deepai.moispano.data.entry.BannerBean;
 import com.deepai.moispano.data.entry.WorkListBean;
 
+import java.util.List;
 import java.util.Map;
 
 import io.reactivex.Observable;
@@ -27,4 +29,9 @@ public interface WorkApiService {
      */
     @POST(RequestApiPath.WORK_MY_LIST)
     Observable<BaseHttpResult<WorkListBean>> requestMySquareData(@Body Map<String, Object> paramas);
+    /**
+     * Banner列表
+     */
+    @POST(RequestApiPath.WORK_BANNER)
+    Observable<BaseHttpResult<List<BannerBean>>> requestBannerData();
 }

@@ -37,11 +37,11 @@ android {
     buildTypes {
         // 测试环境
 //        def apiHostDebug = "\"http://192.168.199.139:8080/paipai360/\""
-        def apiHostDebug = "\"http://www.idarker.cn\""
+        def apiHostDebug = "\"http://www.idarker.cn/\""
 
         // 生产环境
 //        def apiHostRelease = "\"http://192.168.199.139:8080/paipai360/\""
-        def apiHostRelease = "\"http://www.idarker.cn\""
+        def apiHostRelease = "\"http://www.idarker.cn/\""
 
         release {
             minifyEnabled false
@@ -97,4 +97,6 @@ dependencies {
 
     implementation rootProject.ext.libGlide
     implementation rootProject.ext.libGildeTransformations
+    //    轮播器
+    compile 'com.bigkoo:convenientbanner:2.0.5'
 }

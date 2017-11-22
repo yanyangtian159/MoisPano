@@ -91,7 +91,7 @@ public interface RequestApiPath {
     /**
      * 作品举报
      */
-    String WORK_REPORT="api/work/report";
+    String WORK_REPORT="api/user/addAccusation";
 
     /**
      * 作品列表
@@ -101,6 +101,14 @@ public interface RequestApiPath {
      * 我的作品列表
      */
     String WORK_MY_LIST="api/work/findMyWorks";
+    /**
+     * Banner列表
+     */
+    String WORK_BANNER="api/sys/findBanners";
+    /**
+     * Banner列表ByID
+     */
+    String WORK_BANNER_BY_ID="api/sys/findTopicalByBannerId";
 
     /**
      * 作品点赞
@@ -121,5 +129,5 @@ public interface RequestApiPath {
     /**
      * 作品查看次数
      */
-    String USER_LOOK_WORK="api/user/look_work";
+    String USER_LOOK_WORK="api/work/addLookCount";
 }

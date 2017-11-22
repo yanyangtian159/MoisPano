@@ -1,24 +1,35 @@
 package com.deepai.moispano.view.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bigkoo.convenientbanner.ConvenientBanner;
+import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
+import com.bigkoo.convenientbanner.holder.Holder;
+import com.bigkoo.convenientbanner.listener.OnItemClickListener;
+import com.bumptech.glide.Glide;
+import com.deepai.moispano.BuildConfig;
 import com.deepai.moispano.R;
 import com.deepai.moispano.contact.WorkListContact;
+import com.deepai.moispano.data.entry.BannerBean;
 import com.deepai.moispano.data.entry.WorkBean;
 import com.deepai.moispano.presenter.WorkListPresenter;
+import com.deepai.moispano.utils.LogUtil;
 import com.deepai.moispano.utils.ToastUtil;
 import com.deepai.moispano.view.adapter.ListViewIndexAdapter;
-import com.deepai.moispano.view.widget.SpacesItemDecoration;
 import com.jakewharton.rxbinding2.view.RxView;
 
 import java.util.ArrayList;
@@ -37,7 +48,7 @@ import io.reactivex.functions.Consumer;
  * @date 2017/9/11  11:42
  */
 
-public class QuyingFragment extends BaseFragment<WorkListPresenter> implements WorkListContact.WorkListView{
+public class QuyingFragment extends BaseFragment<WorkListPresenter> implements WorkListContact.WorkListView,OnItemClickListener{
 
     public static final String TAG = "QuyingFragment";
 
@@ -53,8 +64,8 @@ public class QuyingFragment extends BaseFragment<WorkListPresenter> implements W
     ImageView search;
     @BindView(R.id.switch_iv)
     ImageView ivSwitch;
-    /*@BindView(R.id.srl_refresh)
-    SwipeRefreshLayout mSrlRefresh;*/
+    @BindView(R.id.srl_refresh)
+    SwipeRefreshLayout mSrlRefresh;
     @BindView(R.id.quying_recycler_list)
     RecyclerView mListView;
 
@@ -77,7 +88,8 @@ public class QuyingFragment extends BaseFragment<WorkListPresenter> implements W
     private Disposable registerSub;
     private Disposable reloadingSub;
     private WorkListPresenter workListPresenter;
-
+    ConvenientBanner mBanner;
+    List<BannerBean> networkImage = new ArrayList<>();
     @Override
     public WorkListPresenter initPresenter() {
         workListPresenter = new WorkListPresenter();
@@ -178,49 +190,47 @@ public class QuyingFragment extends BaseFragment<WorkListPresenter> implements W
     }
 
     private void initListView() {
-
+        View header = LayoutInflater.from(getContext()).inflate(R.layout.rv_header_banner, null);
+        mBanner = (ConvenientBanner) header.findViewById(R.id.banner);
+        //设置高度是屏幕1/4
+        mBanner.setLayoutParams(new RecyclerView.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, getActivity().getWindowManager().getDefaultDisplay().getHeight()/3));
+        presenter.getBannerData();
 //        mListView.setStaggeredGridLayout(2);
         //获取屏幕宽度
         DisplayMetrics outMetrics = new DisplayMetrics();
         WindowManager manager= getActivity().getWindowManager();
         manager.getDefaultDisplay().getMetrics(outMetrics);
         int width = outMetrics.widthPixels/2;
+        int imageHeight = getActivity().getWindowManager().getDefaultDisplay().getHeight()/3;
 //        mListView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         final StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         layoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
         mListView.setLayoutManager(layoutManager);
-        mListView.setHasFixedSize(true);
-        mListView.setNestedScrollingEnabled(false);
-        SpacesItemDecoration decoration = new SpacesItemDecoration(6);
-        mListView.addItemDecoration(decoration);
+
         adapter = new ListViewIndexAdapter(list, getContext(), new ListViewIndexAdapter.OnWorkClickListener() {
             @Override
             public void onWorkClick(WorkBean pictureWork, int position) {
 
             }
-        });
+        },width,imageHeight);
+        adapter.setmHeaderView(mBanner);
         mListView.setAdapter(adapter);
+        mSrlRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                reloadData();
+            }
+        });
         mListView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
                 layoutManager.invalidateSpanAssignments();
+                
             }
         });
 
-      /*  mListView.setOnPullLoadMoreListener(new PullLoadMoreRecyclerView.PullLoadMoreListener() {
-            @Override
-            public void onRefresh() {
-                countPage = 1;
-                getData();
-            }
-
-            @Override
-            public void onLoadMore() {
-                countPage++;
-                getData();
-            }
-        });*/
     }
 
 
@@ -236,12 +246,12 @@ public class QuyingFragment extends BaseFragment<WorkListPresenter> implements W
 
     @Override
     public void showLoading(String msg) {
-        //mSrlRefresh.setRefreshing(true);
+        mSrlRefresh.setRefreshing(true);
     }
 
     @Override
     public void hideLoading() {
-        //mSrlRefresh.setRefreshing(false);
+        mSrlRefresh.setRefreshing(false);
     }
 
     @Override
@@ -291,5 +301,55 @@ public class QuyingFragment extends BaseFragment<WorkListPresenter> implements W
     @Override
     public void onClick(View view) {
 
+    }
+    private void initBanner(){
+        mBanner.setPages(new CBViewHolderCreator<NetWorkImageHolderView>() {
+            @Override
+            public NetWorkImageHolderView createHolder() {
+                return new NetWorkImageHolderView();
+            }
+        }, networkImage)
+                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT)
+                .setPageIndicator(new int[] { R.drawable.indicator_gray, R.drawable.indicator_red })
+                .setOnItemClickListener(this)
+                .setScrollDuration(1800);
+        mBanner.startTurning(1800);
+    }
+
+    @Override
+    public void setBannerData(List<BannerBean> dataList) {
+
+        networkImage = dataList;
+        initBanner();
+    }
+
+    @Override
+    public void onItemClick(int position) {
+
+    }
+
+    public class NetWorkImageHolderView implements Holder<BannerBean> {
+
+        private ImageView imageView;
+
+        @Override
+        public View createView(Context context) {
+            View view = LayoutInflater.from(context).inflate(R.layout.rv_header_img, null);
+            imageView = (ImageView) view.findViewById(R.id.iv_head);
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            return view;
+        }
+
+        @Override
+        public void UpdateUI(Context context, int position, BannerBean data) {
+            //Glide.with(context).load(data.getImgUrl()).into(imageView);
+            // 作品url
+            String bannerImgUrl = data.getPath();
+            if (null != bannerImgUrl && !bannerImgUrl.startsWith("http")) {
+                bannerImgUrl = BuildConfig.API_HOST + bannerImgUrl;
+            }
+            LogUtil.i("==========bannner======"+bannerImgUrl);
+            Glide.with(context).load(bannerImgUrl).placeholder(R.mipmap.works_null).into(imageView);
+        }
     }
 }
