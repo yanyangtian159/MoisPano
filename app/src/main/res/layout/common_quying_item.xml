@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/common_quying_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/common_quying_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/works_null"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/common_quying_head"
+                android:layout_width="@dimen/common_height_small"
+                android:layout_height="@dimen/common_height_small"
+                android:layout_margin="@dimen/common_margin_small"
+                android:src="@mipmap/mine_head_default"/>
+
+            <TextView
+                android:id="@+id/common_quying_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/main_text_color"
+                android:textSize="@dimen/text_size_big"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/common_quying_see_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_margin_small"
+        android:layout_marginTop="@dimen/common_margin_small"
+        android:textColor="@color/common_white"
+        android:textSize="@dimen/text_size"
+        />
+
+    <ImageView
+        android:id="@+id/common_quying_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginRight="@dimen/common_margin_small"
+        android:layout_marginTop="@dimen/common_margin_small"
+        android:src="@mipmap/quying_pano"/>
+
+</android.support.v7.widget.CardView>

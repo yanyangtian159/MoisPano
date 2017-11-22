@@ -1,0 +1,65 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/main_text_color</item>
+        <!-- content text color-->
+        <item name="android:textColor">@color/main_text_color</item>
+        <!-- content text size-->
+        <item name="android:textSize">@dimen/text_size</item>
+        <!-- default background color-->
+        <item name="android:windowBackground">@color/bg_main_window</item>
+        <!-- default list divider drawable-->
+        <!--<item name="android:listDivider">@drawable/bg_list_divider</item>-->
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <!--底部tab键字体样式-->
+    <style name="CustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColor">@color/main_text_color_light</item>
+        <item name="textAllCaps">false</item>
+    </style>
+    <!--底部tab键布局样式-->
+    <style name="CustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorHeight">0dp</item>
+        <item name="tabIndicatorColor">@color/common_white</item>
+        <!--<item name="tabBackground">@color/common_white</item>-->
+        <item name="tabTextAppearance">@style/CustomTabTextAppearance</item>
+        <item name="tabSelectedTextColor">@color/common_black</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabGravity">fill</item>
+        <item name="android:textSize">@dimen/text_size_xx_large</item>
+    </style>
+    <style name="Title">
+        <item name="android:id">@id/titleView</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/title_height</item>
+    </style>
+    <style name="MainEditText">
+        <item name="android:background">@drawable/bg_edittext</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/main_button_height</item>
+        <item name="android:textColor">@color/mainColor</item>
+        <item name="android:textColorHint">@color/colorPrimaryGrayDark</item>
+        <item name="android:textSize">@dimen/main_button_text_size</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="MainButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/main_button_height</item>
+        <item name="android:background">@drawable/login_btn_selector</item>
+        <item name="android:textColor">@color/common_black</item>
+        <item name="android:textSize">@dimen/main_button_text_size</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="CustomCheckBoxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+                <item name="android:button">@drawable/checkbox_style</item>
+    </style>
+
+</resources>

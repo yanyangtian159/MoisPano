@@ -1,0 +1,41 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: 'buildsystem/dependency.gradle'
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+    }
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+project.ext {
+    applicationId = "com.deepai.moispano"
+    buildToolsVersion = "26.0.2"
+    compileSdkVersion = 26
+    minSdkVersion = 19
+    targetSdkVersion = 26
+    versionCode = 100
+    versionName = "1.0.0"
+    abortOnLintError = false
+    javaVersion = JavaVersion.VERSION_1_8
+}

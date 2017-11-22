@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/common_white"
+    android:orientation="vertical">
+
+    <!--<ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/wifi" />-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/loading_error"
+        android:textColor="@color/main_text_color_dark"
+        android:textSize="@dimen/text_size_large" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_margin"
+        android:text="@string/check_net_info"
+        android:textColor="@color/main_text_color_light"
+        android:textSize="@dimen/text_size_large" />
+
+    <TextView
+        android:id="@+id/btn_reloading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_margin_big"
+        android:layout_marginBottom="@dimen/common_margin_large"
+        android:paddingRight="@dimen/common_padding"
+        android:paddingLeft="@dimen/common_padding"
+        android:paddingBottom="@dimen/common_padding_small"
+        android:paddingTop="@dimen/common_padding_small"
+        android:background="@drawable/shape_btn"
+        android:text="@string/reloading"
+        android:textColor="@color/mainColor" />
+
+</LinearLayout>

@@ -1,0 +1,81 @@
+def supportVersion = "27.0.1"
+def daggerVersion = "2.11"
+def retrofitVersion = "2.3.0"
+def okHttpVersion = "3.8.1"
+def rxBindingVersion = '2.0.0'
+def butterKnifeVersion = '8.6.0'
+
+// 内存泄漏辅助检测
+def leakCanaryVersion = "1.5.3"
+def blockCanaryVersion = '1.5.0'
+
+project.ext {
+
+    libSupportAppcompat = "com.android.support:appcompat-v7:${supportVersion}"
+    libSupportDesign = "com.android.support:design:${supportVersion}"
+    libSupportRecyclerview = "com.android.support:recyclerview-v7:${supportVersion}"
+    libSupportGridlayout = "com.android.support:gridlayout-v7:${supportVersion}"
+    libSupportCardView = "com.android.support:cardview-v7:${supportVersion}"
+    libSupportV4 = "com.android.support:support-v4:${supportVersion}"
+    libSupportMultidex = "com.android.support:multidex:1.0.1"
+    libAndroidAnnotation = "com.android.support:support-annotations:${supportVersion}"
+
+    libRxJava = "io.reactivex.rxjava2:rxjava:2.1.1"
+    libRxAndroid = "io.reactivex.rxjava2:rxandroid:2.0.1"
+
+    libEventBus = "org.greenrobot:eventbus:3.0.0"
+    libJavaxAnnotation = "javax.annotation:jsr250-api:1.0"
+
+    libGson = "com.google.code.gson:gson:2.6.1"
+    libOkHttp = "com.squareup.okhttp3:okhttp:${okHttpVersion}"
+    libOkHttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}"
+    libRetrofit = "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+    libRetrofitConverterGson = "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
+    libRetrofitAdapterRxJava = "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
+
+    libDagger = "com.google.dagger:dagger:${daggerVersion}"
+    libDaggerCompiler = "com.google.dagger:dagger-compiler:${daggerVersion}"
+    libGuava = "com.google.guava:guava:23.0-android"
+
+    libGlide = "com.github.bumptech.glide:glide:3.7.0"
+    libGildeTransformations = "jp.wasabeef:glide-transformations:2.0.1"
+    libGoogleGCM = "com.google.android.gms:play-services-appindexing:8.1.0"
+
+    libRxBinding = "com.jakewharton.rxbinding2:rxbinding:${rxBindingVersion}"
+    libRxBindingSupportV4 = "com.jakewharton.rxbinding2:rxbinding-support-v4:${rxBindingVersion}"
+    libRxBindingAppcompatV7 = "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:${rxBindingVersion}"
+    libRxBindingDesign = "com.jakewharton.rxbinding2:rxbinding-design:${rxBindingVersion}"
+    libRxBindingRecyclerview = "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:${rxBindingVersion}"
+    libRxBindingLeanback = "com.jakewharton.rxbinding2:rxbinding-leanback-v17::${rxBindingVersion}"
+
+    libButterKnifeVersion = "com.jakewharton:butterknife:${butterKnifeVersion}"
+    libButterKnifeComplier = "com.jakewharton:butterknife-compiler:${butterKnifeVersion}"
+
+    libRealm = "io.realm:realm-android:0.88.0"
+
+    libUltimateRecyclerView = "com.hkm.ui:ultimaterecyclerview:1.0.2"
+
+    libEasyrecyclerview = "com.camnter.easyrecyclerview:easyrecyclerview:1.3"
+
+    libCrash = "cat.ereza:customactivityoncrash:2.1.0"
+    libCountDownView = "com.github.iwgang:countdownview:2.1.6"
+
+    // 日期联动控件(用户的出生日期)
+    libDate = 'com.contrarywind:Android-PickerView:3.2.6'
+
+    // Android-QuickSideBar (字母排序)
+    libQuickSideBar = "com.bigkoo:quicksidebar:1.0.3"
+
+    // header浮动（sticky-headers-recyclerview）
+    libStickyHeaders = "com.timehop.stickyheadersrecyclerview:library:0.4.3@aar"
+
+    debugDependencies = [
+            leakCanary : "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+            blockcanary: "com.github.moduth:blockcanary-ui:${blockCanaryVersion}",
+    ]
+
+    releaseDependencies = [
+            leakCanary : "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}",
+            blockcanary: "com.github.moduth:blockcanary-no-op:${blockCanaryVersion}",
+    ]
+}

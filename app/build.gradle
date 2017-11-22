@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+apply from: '../buildSystem/signingConfig.gradle'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+   /* lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }*/
+
+    signingConfigs {
+        debug {
+            storeFile file(project.signing.storeFile)
+            storePassword project.signing.storePassword
+            keyAlias project.signing.keyAlias
+            keyPassword project.signing.keyPassword
+        }
+        release {
+            storeFile file(project.signing.storeFile)
+            storePassword project.signing.storePassword
+            keyAlias project.signing.keyAlias
+            keyPassword project.signing.keyPassword
+        }
+    }
+    buildTypes {
+        // 测试环境
+//        def apiHostDebug = "\"http://192.168.199.139:8080/paipai360/\""
+        def apiHostDebug = "\"http://www.idarker.cn\""
+
+        // 生产环境
+//        def apiHostRelease = "\"http://192.168.199.139:8080/paipai360/\""
+        def apiHostRelease = "\"http://www.idarker.cn\""
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            buildConfigField("String", "API_HOST", apiHostRelease)
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            buildConfigField("String", "API_HOST", apiHostDebug)
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    implementation rootProject.ext.libSupportV4
+    implementation rootProject.ext.libSupportAppcompat
+    implementation rootProject.ext.libSupportMultidex
+    implementation rootProject.ext.libSupportDesign
+    implementation rootProject.ext.libSupportRecyclerview
+    implementation rootProject.ext.libSupportCardView
+    implementation rootProject.ext.libDate
+    implementation rootProject.ext.libCrash
+    implementation rootProject.ext.libRxBindingSupportV4
+    implementation rootProject.ext.libRxBindingAppcompatV7
+    implementation rootProject.ext.libRxBindingDesign
+    implementation rootProject.ext.libRxBindingRecyclerview
+    implementation rootProject.ext.libButterKnifeVersion
+    annotationProcessor rootProject.ext.libButterKnifeComplier
+    implementation rootProject.ext.libGson
+
+    implementation rootProject.ext.libRxJava
+    implementation rootProject.ext.libRxAndroid
+
+    implementation rootProject.ext.libDagger
+    annotationProcessor  rootProject.ext.libDaggerCompiler
+    provided rootProject.ext.libJavaxAnnotation
+    implementation rootProject.ext.libAndroidAnnotation
+
+    implementation rootProject.ext.libOkHttp
+    implementation rootProject.ext.libOkHttpLoggingInterceptor
+    implementation rootProject.ext.libRetrofit
+    implementation rootProject.ext.libRetrofitConverterGson
+    implementation rootProject.ext.libRetrofitAdapterRxJava
+
+    implementation rootProject.ext.libGlide
+    implementation rootProject.ext.libGildeTransformations
+}

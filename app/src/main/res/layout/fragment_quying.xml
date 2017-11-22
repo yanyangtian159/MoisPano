@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/common_white"
+              android:orientation="vertical">
+
+    <!--广场页头部布局-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/common_white">
+
+        <TextView
+            android:id="@+id/quying_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/common_padding_small"
+            android:text="@string/quying_all"
+            android:textColor="@color/main_text_color_dark"
+            android:textSize="@dimen/text_size_title"
+            />
+
+        <ImageView
+            android:id="@+id/switch_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/quying_switch"
+            android:rotation="0"
+            android:src="@mipmap/weizhankai"/>
+
+        <ImageView
+            android:id="@+id/quying_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="@dimen/common_padding_small"
+            android:paddingLeft="@dimen/common_padding"
+            android:paddingRight="@dimen/common_padding_big"
+            android:paddingTop="@dimen/common_padding_small"
+            android:src="@mipmap/search"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/common_white">
+
+        <!--<android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/srl_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+</android.support.v4.widget.SwipeRefreshLayout>-->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/quying_recycler_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/main_bottom_tab_height"/>
+
+
+        <!--没有内容展示-->
+        <include layout="@layout/common_un_login_attention"/>
+
+        <!--加载失败-->
+        <include
+            android:id="@+id/ll_reloading"
+            layout="@layout/common_net_error_view"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

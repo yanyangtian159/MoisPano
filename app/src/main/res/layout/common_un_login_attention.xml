@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/un_login_area"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_white"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="visible">
+    <!--图片-->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/news_null" />
+    <!--提示文字-->
+    <TextView
+        android:id="@+id/tv_no_caontacts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_margin"
+        android:text="@string/not_login"
+        android:textColor="@color/main_text_color_light"
+        android:textSize="@dimen/text_size_large" />
+
+    <!--button 区域-->
+    <LinearLayout
+        android:id="@+id/ll_no_login_btn_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_margin_big"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="@dimen/login_btn_width"
+            android:layout_height="@dimen/login_btn_height"
+            android:background="@drawable/shape_btn"
+            android:text="@string/register"
+            android:textColor="@color/mainColor" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="@dimen/login_btn_width"
+            android:layout_height="@dimen/login_btn_height"
+            android:layout_marginLeft="@dimen/common_margin_large"
+            android:background="@drawable/shape_btn"
+            android:text="@string/login"
+            android:textColor="@color/main_text_color" />
+    </LinearLayout>
+
+</LinearLayout>

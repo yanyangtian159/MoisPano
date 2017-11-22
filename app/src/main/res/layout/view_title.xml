@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/translucent">
+
+    <TextView
+        android:id="@+id/tv_title_v_left"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/title_height"
+        android:gravity="center"
+        android:paddingLeft="@dimen/common_margin"
+        android:paddingRight="@dimen/common_margin"
+        android:drawableLeft="@mipmap/back"
+        android:drawablePadding="@dimen/common_margin_small"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/textColorPrimary" />
+
+    <TextView
+        android:id="@+id/tv_title_v_name"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/title_height"
+        android:gravity="center"
+        android:paddingLeft="@dimen/common_margin"
+        android:paddingRight="@dimen/common_margin"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/text_size_title"
+        android:textColor="@color/textColorPrimary"/>
+
+    <TextView
+        android:id="@+id/tv_title_v_right"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/title_height"
+        android:gravity="center"
+        android:paddingLeft="@dimen/common_margin"
+        android:paddingRight="@dimen/common_margin"
+        android:layout_alignParentRight="true"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/textColorPrimary"/>
+
+    <ImageView
+        android:id="@+id/iv_title_v_right"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/title_height"
+        android:gravity="center"
+        android:paddingLeft="@dimen/common_margin"
+        android:paddingRight="@dimen/common_margin"
+        android:scaleType="center"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        />
+
+</merge>

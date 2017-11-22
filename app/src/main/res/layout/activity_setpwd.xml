@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/login_bg"
+                android:orientation="vertical">
+
+    <com.deepai.dapanorama.view.widget.TitleView
+        style="@style/Title"
+        app:titleNameText="@string/set_pwd"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/common_margin_x_large">
+        <LinearLayout
+            style="@style/MainEditText"
+            android:layout_marginLeft="@dimen/login_horizontal_margin"
+            android:layout_marginRight="@dimen/login_horizontal_margin"
+            android:layout_marginTop="@dimen/login_vertical_margin_big"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/common_margin"
+            android:paddingRight="@dimen/common_margin">
+
+            <!-- <ImageView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_vertical"
+                 android:layout_marginRight="@dimen/common_margin_small"
+                 android:src="@drawable/icon_username" />-->
+
+            <EditText
+                android:id="@+id/et_pwd_first_setpwd"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center"
+                android:hint="@string/set_pwd_first"
+                android:inputType="number"
+                android:textSize="@dimen/text_size"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MainEditText"
+            android:layout_marginLeft="@dimen/login_horizontal_margin"
+            android:layout_marginRight="@dimen/login_horizontal_margin"
+            android:layout_marginTop="@dimen/login_vertical_margin"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/translucent">
+
+            <!-- <ImageView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_vertical"
+                 android:layout_marginRight="@dimen/common_margin_small"
+                 android:src="@drawable/icon_password" />-->
+
+            <EditText
+                android:id="@+id/et_pwd_confirm_setpwd"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_height"
+                android:background="@drawable/bg_edittext"
+                android:gravity="center"
+                android:hint="@string/set_pwd_confirm"
+                android:inputType="textPassword"
+                android:textSize="@dimen/text_size"/>
+        </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/rl_disclaimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/login_horizontal_margin"
+            android:layout_marginRight="@dimen/login_horizontal_margin">
+
+            <CheckBox
+                android:id="@+id/check_disclaimer"
+                style="@style/CustomCheckBoxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/common_padding"
+                android:paddingLeft="@dimen/common_padding_small"
+                android:paddingRight="@dimen/common_padding_tiny"
+                android:paddingTop="@dimen/common_padding"
+                />
+
+            <TextView
+                android:id="@+id/tv_setpwd_disclaimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/check_disclaimer"
+                android:paddingBottom="@dimen/common_padding"
+                android:paddingLeft="@dimen/common_padding_small"
+                android:paddingRight="@dimen/common_padding_tiny"
+                android:paddingTop="@dimen/common_padding"
+                android:text="@string/disclaimer"
+                android:textColor="@color/common_blue"/>
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/btn_login"
+            style="@style/MainButton"
+            android:layout_marginLeft="@dimen/login_horizontal_margin"
+            android:layout_marginRight="@dimen/login_horizontal_margin"
+            android:layout_marginTop="@dimen/login_vertical_margin_big"
+            android:enabled="false"
+            android:text="@string/complete"
+            android:textColor="@color/colorPrimaryGrayDark"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="@dimen/common_padding">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="@dimen/common_padding"
+            android:text="@string/to_login"
+            android:textColor="@color/common_white"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</RelativeLayout>

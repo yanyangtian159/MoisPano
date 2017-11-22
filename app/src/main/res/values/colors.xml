@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="textColorPrimary">#000000</color>
+
+    <color name="mainColor">#F1664D</color>
+
+    <!--公用颜色-->
+    <color name="divider">#CCCCCC</color>
+    <color name="divider1">#999999</color>
+    <color name="divider2">#dfdfdf</color>
+    <color name="common_white">#FFFFFF</color>
+    <color name="common_black">#000000</color>
+    <color name="common_blue">#00a0e9</color>
+    <color name="common_background_color">#F4F9F5</color>
+    <color name="common_background_translucent">#25000000</color>
+    <color name="translucent">#00000000</color>
+    <color name="translucent_white">#aaffffff</color>
+    <color name="common_background_effaff">#effaff</color>
+    <color name="common_btn_solid">#cc9c00</color>
+    <color name="notice_not_read">#CACACA</color>
+
+    <color name="colorPrimary2">#E67C48</color>
+    <color name="colorPrimaryGrayDark">#555555</color>
+    <color name="colorPrimaryGray">#D6D7D7</color>
+    <color name="colorPrimaryGrayLight">#F3F5FA</color>
+
+    <!--主tab背景-->
+    <color name="main_bg_tab">#00000000</color>
+    <!--主按钮背景色-->
+    <color name="main_bg_btn_enable">#00A0EA</color>
+    <color name="main_bg_btn_not_enable">#555555</color>
+    <color name="main_bg_tv_enable">#b7e7fc</color>
+    <color name="main_bg_btn_pressed">#007CB5</color>
+    <!--举报按钮颜色-->
+    <color name="report_btn_press">#ff3333</color>
+    <color name="report_btn_relase">#e60012</color>
+
+    <!--主窗口背景-->
+    <color name="bg_main_window">#E8F7FC</color>
+
+    <color name="bg_second">#F4F9F5</color>
+
+    <!--登陆窗口背景-->
+    <!--主内容字体颜色-->
+    <color name="main_text_color_dark">#333333</color>
+    <color name="main_text_color">#666666</color>
+    <color name="main_text_color_light">#AAAAAA</color>
+    <color name="main_text_color_replay">#2f77e2</color>
+
+    <!--用户等级背景色-->
+    <color name="user_level">#fc891c</color>
+
+    <!--标签输入框字体颜色-->
+    <color name="tag_pop_edit_color">#f9be00</color>
+
+    <!-- 积分driver背景 -->
+    <color name="points_driver_color">#997308</color>
+    <color name="points_btn_color">#bf9200</color>
+
+    <color name="color999999">#999999</color>
+    <color name="colorf7f7f7">#f7f7f7</color>
+    <color name="colorcccccc">#cccccc</color>
+    <color name="coloree524d">#ee524d</color>
+</resources>

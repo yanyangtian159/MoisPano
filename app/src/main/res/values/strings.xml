@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">MoisPano</string>
+
+    <!--main tab-->
+    <string name="tab_quying">趣影</string>
+    <string name="tab_message">消息</string>
+    <string name="tab_camare"> </string>
+    <string name="tab_works">作品</string>
+    <string name="tab_mine">我的</string>
+
+    <!--登录注册-->
+    <string name="login">登录</string>
+    <string name="phone">手机号</string>
+    <string name="password">密码</string>
+    <string name="disclaimer">我已阅读并同意《免责声明》</string>
+    <string name="register_now">现在注册</string>
+    <string name="forgot_pwd_with_symbol">忘记密码</string>
+    <string name="login_third">使用社交账号登录</string>
+    <string name="register">注册</string>
+    <string name="get_code">获取验证码</string>
+    <string name="input_code">输入验证码</string>
+    <string name="next">下一步</string>
+    <string name="set_pwd">设置密码</string>
+    <string name="set_pwd_first">请输入密码</string>
+    <string name="set_pwd_confirm">确认密码</string>
+    <string name="complete">完成</string>
+    <string name="to_login">已有账号，去登录</string>
+
+    <!--趣影页-->
+    <string name="quying_all">全部</string>
+    <string name="quying_photo">照片</string>
+    <string name="quying_panorama">全景照片</string>
+    <string name="quying_video">视频</string>
+
+    <!--常用-->
+    <string name="loading_error">数据加载失败</string>
+    <string name="check_net_info">请检查您的手机是否联网</string>
+    <string name="reloading">重新加载</string>
+    <string name="not_login">登录后，可以查看更多，快去登录吧&#8230;</string>
+    <string name="no_attention_work">目前还没有作品哦&#8230;</string>
+    <string name="no_works">你还没有作品，马上去拍摄吧！</string>
+    <string name="common_empty_view_tips">哎呀~(^o^)&#8230;&#8230;什么都没有!</string>
+
+</resources>

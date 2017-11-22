@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitleView">
+        <attr name="titleNameText" format="string" />
+        <attr name="leftText" format="string" />
+        <attr name="rightText" format="string" />
+        <attr name="drawableLeft" format="reference" />
+        <attr name="drawableRight" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="SendVerifyBtn">
+        <attr name="startText" format="string" />
+        <attr name="suffixText" format="string" />
+        <attr name="endText" format="string" />
+        <attr name="millisInFuture" format="integer"/>
+        <attr name="countDownInterval" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="SettingView">
+        <attr name="settingLeftImg" format="reference" />
+        <attr name="settingLeftImgSize" format="dimension"/>
+        <attr name="settingLeftText" format="string" />
+        <attr name="settingRightImg" format="reference" />
+        <attr name="settingRightImgSize" format="dimension"/>
+        <attr name="settingRightText" format="string" />
+        <attr name="settingRightIconVisibility" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="MagicRecyclerView">
+        <attr name="header_layout" format="reference"/>
+        <attr name="parallaxMultiplier" format="float"/>
+        <attr name="footer_layout" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="LQRRecyclerView">
+        <!--RecyclerView的类型-->
+        <attr name="rv_type" format="integer">
+            <enum name="grid" value="0"/>
+            <enum name="stagger" value="1"/>
+        </attr>
+
+        <!--RecyclerView的方向-->
+        <attr name="rv_orientation">
+            <enum name="vertical" value="0"/>
+            <enum name="horizontal" value="1"/>
+        </attr>
+
+        <!--网格或瀑布流的列数-->
+        <attr name="rv_column" format="integer"/>
+
+        <!--下划线高度/宽度-->
+        <attr name="rv_divider_size" format="dimension"/>
+        <!--下划线颜色-->
+        <attr name="rv_divider_color" format="color"/>
+        <!--下划线图片-->
+        <attr name="rv_divider_drawable" format="reference"/>
+
+        <!--是否开启默认动画-->
+        <attr name="rv_default_animator_open" format="boolean"/>
+    </declare-styleable>
+</resources>

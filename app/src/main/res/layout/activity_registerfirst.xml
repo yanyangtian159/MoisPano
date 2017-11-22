@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/login_bg"
+                android:orientation="vertical">
+
+    <com.deepai.dapanorama.view.widget.TitleView
+        style="@style/Title"
+        app:titleNameText="@string/register"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/common_margin_x_large">
+        <LinearLayout
+            style="@style/MainEditText"
+            android:layout_marginLeft="@dimen/login_horizontal_margin"
+            android:layout_marginRight="@dimen/login_horizontal_margin"
+            android:layout_marginTop="@dimen/login_vertical_margin_big"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/common_margin"
+            android:paddingRight="@dimen/common_margin">
+
+            <!-- <ImageView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_vertical"
+                 android:layout_marginRight="@dimen/common_margin_small"
+                 android:src="@drawable/icon_username" />-->
+
+            <EditText
+                android:id="@+id/et_phone_num_register"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center"
+                android:hint="@string/phone"
+                android:inputType="number"
+                android:textSize="@dimen/text_size"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MainEditText"
+            android:layout_marginLeft="@dimen/login_horizontal_margin"
+            android:layout_marginRight="@dimen/login_horizontal_margin"
+            android:layout_marginTop="@dimen/login_vertical_margin"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/translucent">
+
+            <!-- <ImageView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_vertical"
+                 android:layout_marginRight="@dimen/common_margin_small"
+                 android:src="@drawable/icon_password" />-->
+
+            <EditText
+                android:id="@+id/et_pwd_register"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/common_height"
+                android:background="@drawable/bg_edittext"
+                android:gravity="center"
+                android:hint="@string/input_code"
+                android:layout_marginRight="@dimen/common_margin"
+                android:inputType="textPassword"
+                android:textSize="@dimen/text_size"/>
+            <Button
+                android:id="@+id/get_code_register"
+                android:background="@drawable/bg_edittext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/get_code"
+                />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/btn_login"
+            style="@style/MainButton"
+            android:layout_marginLeft="@dimen/login_horizontal_margin"
+            android:layout_marginRight="@dimen/login_horizontal_margin"
+            android:layout_marginTop="@dimen/login_vertical_margin_big"
+            android:enabled="false"
+            android:text="@string/next"
+            android:textColor="@color/colorPrimaryGrayDark"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="@dimen/common_padding">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="@dimen/common_padding"
+            android:text="@string/register_now"
+            android:textColor="@color/common_white"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</RelativeLayout>

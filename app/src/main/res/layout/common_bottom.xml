@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="@color/translucent">
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout_main"
+        style="@style/CustomTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@mipmap/tab_bg"
+        android:paddingTop="@dimen/common_padding_tiny">
+
+        <android.support.design.widget.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/item_tab_quying"/>
+
+        <android.support.design.widget.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/item_tab_message"/>
+
+        <android.support.design.widget.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/item_tab_camare"/>
+
+        <android.support.design.widget.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/item_tab_works"/>
+
+        <android.support.design.widget.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/item_tab_mine"/>
+
+
+    </android.support.design.widget.TabLayout>
+
+    <ImageView
+        android:id="@+id/iv_main_go_to_take"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/main_bottom_tab_height"
+        android:layout_gravity="center"
+        android:paddingTop="@dimen/common_padding_tiny"
+        android:src="@drawable/tab_bottom_camare_slector"/>
+
+</FrameLayout>

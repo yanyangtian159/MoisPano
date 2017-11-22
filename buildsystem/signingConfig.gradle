@@ -1,0 +1,6 @@
+ext.signing = [
+        storeFile : '../buildSystem/mosipanorama.jks',
+        storePassword : '123654',
+        keyAlias : 'mosipanaramakey',
+        keyPassword : '123654',
+]
