@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MoisPano.iml" filepath="$PROJECT_DIR$/MoisPano.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraryrefreshrecycle/libraryrefreshrecycle.iml" filepath="$PROJECT_DIR$/libraryrefreshrecycle/libraryrefreshrecycle.iml" />
     </modules>
   </component>
 </project>

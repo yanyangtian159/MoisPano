@@ -233,8 +233,6 @@ public class QuyingFragment extends BaseFragment<WorkListPresenter> implements W
 
     }
 
-
-
     @Override
     public void setData(List<WorkBean> dataList) {
         if (countPage==1)
