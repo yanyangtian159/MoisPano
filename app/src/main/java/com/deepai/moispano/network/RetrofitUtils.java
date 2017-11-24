@@ -31,8 +31,8 @@ public abstract class RetrofitUtils {
             }
             mRetrofit = new Retrofit.Builder()
                     .baseUrl(Constant.hostName + "/")
-//                    .addConverterFactory(GsonConverterFactory.create())//添加转化库，默认是Gson
-                    .addConverterFactory(StringConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create())//添加转化库，默认是Gson
+//                    .addConverterFactory(StringConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) //添加回调库，采用RxJava
                     .client(mOkHttpClient) //设置使用okhttp网络请求
                     .build();
