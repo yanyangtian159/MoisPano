@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/MoisPano.iml" filepath="$PROJECT_DIR$/MoisPano.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraryrefreshrecycle/libraryrefreshrecycle.iml" filepath="$PROJECT_DIR$/libraryrefreshrecycle/libraryrefreshrecycle.iml" />
+      <module fileurl="file://F:\gangzi\MoisPano\libraryrefreshrecycle\libraryrefreshrecycle.iml" filepath="F:\gangzi\MoisPano\libraryrefreshrecycle\libraryrefreshrecycle.iml" />
     </modules>
   </component>
 </project>

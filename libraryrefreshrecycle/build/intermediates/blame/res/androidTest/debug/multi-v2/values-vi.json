@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\ZaigangWorkspace\\MoisPano\\libraryrefreshrecycle\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-vi\\values-vi.xml",
+            "outputFile": "F:\\gangzi\\MoisPano\\libraryrefreshrecycle\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-vi\\values-vi.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\deepaiZhao\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\5a4ee297f8aa87bf2268e9a1bc3b1a82\\res\\values-vi\\values-vi.xml",
+                    "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\f2aa366a14a8ca5c049d9d166a9119a8\\res\\values-vi\\values-vi.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

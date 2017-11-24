@@ -26,7 +26,9 @@ import com.deepai.moispano.R;
 import com.deepai.moispano.contact.WorkListContact;
 import com.deepai.moispano.data.entry.BannerBean;
 import com.deepai.moispano.data.entry.WorkBean;
-import com.deepai.moispano.presenter.WorkListPresenter;
+import com.deepai.moispano.mvp.model.IQuyingFragmentModel;
+import com.deepai.moispano.mvp.presenter.QuyingFragmentPersenter;
+import com.deepai.moispano.mvp.views.IQuyingFragmentViews;
 import com.deepai.moispano.utils.LogUtil;
 import com.deepai.moispano.utils.ToastUtil;
 import com.deepai.moispano.view.adapter.ListViewIndexAdapter;
@@ -41,14 +43,13 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
-
 /**
  * @author ZhaoZaigang
  * @Description 趣影页
  * @date 2017/9/11  11:42
  */
 
-public class QuyingFragment extends BaseFragment<WorkListPresenter> implements WorkListContact.WorkListView,OnItemClickListener{
+public class QuyingFragment extends BaseFragment implements OnItemClickListener ,IQuyingFragmentViews{
 
     public static final String TAG = "QuyingFragment";
 
@@ -57,6 +58,7 @@ public class QuyingFragment extends BaseFragment<WorkListPresenter> implements W
 
     private List<WorkBean> list = new ArrayList<>();
     private ListViewIndexAdapter adapter;
+    private QuyingFragmentPersenter presenter;
 
     @BindView(R.id.quying_switch)
     TextView tvSwitch;
@@ -87,14 +89,14 @@ public class QuyingFragment extends BaseFragment<WorkListPresenter> implements W
     private Disposable longinSub, switchSub;
     private Disposable registerSub;
     private Disposable reloadingSub;
-    private WorkListPresenter workListPresenter;
+
     ConvenientBanner mBanner;
     List<BannerBean> networkImage = new ArrayList<>();
-    @Override
-    public WorkListPresenter initPresenter() {
-        workListPresenter = new WorkListPresenter();
-        return workListPresenter;
-    }
+//    @Override
+//    public WorkListPresenter initPresenter() {
+//        workListPresenter = new WorkListPresenter();
+//        return workListPresenter;
+//    }
 
     @Override
     public int getLayoutId() {
@@ -113,6 +115,7 @@ public class QuyingFragment extends BaseFragment<WorkListPresenter> implements W
      * 初始化 提示界面
      */
     private void initTips() {
+        presenter = new QuyingFragmentPersenter();
         llTips.setVisibility(View.GONE);
         longinSub = RxView.clicks(btnLogin)
                 .throttleFirst(500, TimeUnit.MICROSECONDS)
@@ -184,9 +187,9 @@ public class QuyingFragment extends BaseFragment<WorkListPresenter> implements W
 
     private void getData() {
         mListView.setVisibility(View.VISIBLE);
-        workListPresenter.setParams(countPage, workType, "");
+//        workListPresenter.setParams(countPage, workType, "");
         showLoading("");
-        presenter.getData();
+//        presenter.getData();
     }
 
     private void initListView() {
@@ -195,7 +198,7 @@ public class QuyingFragment extends BaseFragment<WorkListPresenter> implements W
         //设置高度是屏幕1/4
         mBanner.setLayoutParams(new RecyclerView.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, getActivity().getWindowManager().getDefaultDisplay().getHeight()/3));
-        presenter.getBannerData();
+//        presenter.getBannerData();
 //        mListView.setStaggeredGridLayout(2);
         //获取屏幕宽度
         DisplayMetrics outMetrics = new DisplayMetrics();
@@ -233,14 +236,14 @@ public class QuyingFragment extends BaseFragment<WorkListPresenter> implements W
 
     }
 
-    @Override
-    public void setData(List<WorkBean> dataList) {
-        if (countPage==1)
-            list.clear();
-        list.addAll(dataList);
-        showTips();
-        adapter.notifyDataSetChanged();
-    }
+//    @Override
+//    public void setData(List<WorkBean> dataList) {
+//        if (countPage==1)
+//            list.clear();
+//        list.addAll(dataList);
+//        showTips();
+//        adapter.notifyDataSetChanged();
+//    }
 
     @Override
     public void showLoading(String msg) {
@@ -314,15 +317,19 @@ public class QuyingFragment extends BaseFragment<WorkListPresenter> implements W
         mBanner.startTurning(1800);
     }
 
-    @Override
-    public void setBannerData(List<BannerBean> dataList) {
-
-        networkImage = dataList;
-        initBanner();
-    }
 
     @Override
     public void onItemClick(int position) {
+
+    }
+
+    @Override
+    public void getBannerData() {
+
+    }
+
+    @Override
+    public void getdata() {
 
     }
 

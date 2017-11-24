@@ -11,7 +11,6 @@ import android.support.multidex.MultiDexApplication;
 import android.text.TextUtils;
 
 import com.deepai.moispano.cache.UserCache;
-import com.deepai.moispano.data.rest.WorkApiService;
 import com.deepai.moispano.utils.BackgroundUtil;
 import com.deepai.moispano.utils.LogUtil;
 import com.google.gson.Gson;
@@ -34,7 +33,7 @@ public class App extends MultiDexApplication implements Application.ActivityLife
     private LogUtil log;
     private Gson gson;
     private UserCache userCache;
-    private WorkApiService workApiService;
+//    private WorkApiService workApiService;
 
     public final static boolean DEBUG = BuildConfig.DEBUG;
 
@@ -42,9 +41,9 @@ public class App extends MultiDexApplication implements Application.ActivityLife
     public void onCreate() {
         super.onCreate();
 //        LeakCanary.install(this);
-        if (DEBUG) {
-            CustomActivityOnCrash.install(this);
-        }
+//        if (DEBUG) {
+//            CustomActivityOnCrash.install(this);
+//        }
         instance = this;
         // 注册ActivityLifecycleCallbacks
         registerActivityLifecycleCallbacks(this);
@@ -117,9 +116,9 @@ public class App extends MultiDexApplication implements Application.ActivityLife
         return log;
     }
 
-    public WorkApiService getWorkApiService() {
-        return workApiService;
-    }
+//    public WorkApiService getWorkApiService() {
+//        return workApiService;
+//    }
 
    /* public SurveyApiService getSurveyApiService() {
         return surveyApiService;

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\ZaigangWorkspace\\MoisPano\\libraryrefreshrecycle\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "F:\\gangzi\\MoisPano\\libraryrefreshrecycle\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\deepaiZhao\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\5a4ee297f8aa87bf2268e9a1bc3b1a82\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\f2aa366a14a8ca5c049d9d166a9119a8\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\deepaiZhao\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.0.2.aar\\23d5e369edc79618dcb2a99c4029c5da\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.0.2.aar\\9ed5505c8b7c664240e48f4e774fa3df\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

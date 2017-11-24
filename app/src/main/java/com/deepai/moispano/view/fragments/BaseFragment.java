@@ -11,8 +11,7 @@ import android.view.ViewGroup;
 
 import com.deepai.moispano.App;
 import com.deepai.moispano.R;
-import com.deepai.moispano.base.BasePresenter;
-import com.deepai.moispano.mvp.IView;
+import com.deepai.moispano.mvp.views.IBaseFramentViews;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -23,12 +22,12 @@ import butterknife.Unbinder;
  * @date 2017/9/11  11:49
  */
 
-public abstract class BaseFragment<P extends BasePresenter> extends Fragment implements IView, View.OnClickListener{
+public abstract class BaseFragment extends Fragment implements IBaseFramentViews, View.OnClickListener{
 
     private static final String TAG = "BaseFragment";
     private Unbinder unbinder;
 
-    protected P presenter;
+//    protected BaseFragmentPersenter presenter;
     private boolean isViewCreate = false;//view是否创建
     private boolean isViewVisible = false;//view是否可见
     public Context context;
@@ -38,15 +37,14 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        presenter = initPresenter();
+//        presenter = new BaseFragmentPersenter();
         initCommonData();
     }
-    public abstract P initPresenter();
 
     private void initCommonData() {
-        if (presenter != null) {
-            presenter.attachView(this);
-        }
+//        if (presenter != null) {
+//            presenter.attachView(this);
+//        }
     }
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -97,9 +95,9 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
 
     @Override
     public void onDestroyView() {
-        if (presenter != null) {
-            presenter.detachView();
-        }
+//        if (presenter != null) {
+//            presenter.detachView();
+//        }
         isViewCreate = false;
         super.onDestroyView();
     }

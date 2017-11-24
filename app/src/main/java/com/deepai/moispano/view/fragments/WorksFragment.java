@@ -4,7 +4,6 @@ package com.deepai.moispano.view.fragments;
 import android.view.View;
 
 import com.deepai.moispano.R;
-import com.deepai.moispano.base.BasePresenter;
 
 /**
  * @author ZhaoZaigang
@@ -16,10 +15,10 @@ public class WorksFragment extends BaseFragment{
 
     public static final String TAG = "WorksFragment";
 
-    @Override
-    public BasePresenter initPresenter() {
-        return null;
-    }
+//    @Override
+//    public BasePresenter initPresenter() {
+//        return null;
+//    }
 
     @Override
     public int getLayoutId() {

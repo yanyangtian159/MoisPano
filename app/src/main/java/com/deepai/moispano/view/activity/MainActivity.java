@@ -10,8 +10,7 @@ import android.widget.ImageView;
 
 import com.deepai.moispano.App;
 import com.deepai.moispano.R;
-import com.deepai.moispano.base.BaseActivity;
-import com.deepai.moispano.base.BasePresenter;
+import com.deepai.moispano.mvp.presenter.MainActivityPresenter;
 import com.deepai.moispano.view.fragments.CamareFragment;
 import com.deepai.moispano.view.fragments.MessageFragment;
 import com.deepai.moispano.view.fragments.MineFragment;
@@ -37,6 +36,8 @@ public class MainActivity extends BaseActivity {
 
     //当前选中页tab位置
     private int selectedTabPosition;
+
+    protected MainActivityPresenter presenter;
 
     //全局变量
     private App app;
@@ -75,14 +76,15 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    @Override
-    public BasePresenter initPresenter() {
-        return null;
-    }
+//    @Override
+//    public BasePresenter initPresenter() {
+//        return null;
+//    }
 
     //初始化控件
     private void  initview(){
         app = App.getInstance();
+        presenter = new MainActivityPresenter();
     }
     @Override
     protected void onResume() {
@@ -147,7 +149,9 @@ public class MainActivity extends BaseActivity {
         mineFragment = (MineFragment) manager.findFragmentByTag(MineFragment.TAG);
         camareFragment = (CamareFragment) manager.findFragmentByTag(CamareFragment.TAG);
     }
-    private void showFragment(int position) {
+
+    @Override
+    public void showFragment(int position) {
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         switch (position) {
