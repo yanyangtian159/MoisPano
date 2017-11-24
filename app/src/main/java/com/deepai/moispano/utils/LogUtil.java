@@ -6,6 +6,7 @@ import android.util.Log;
  * Created by Jc on 2016/3/1.
  */
 public class LogUtil {
+
     static String className;//类名
     static String methodName;//方法名
     static int lineNumber;//行数
