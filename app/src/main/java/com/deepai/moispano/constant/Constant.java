@@ -5,6 +5,7 @@ package com.deepai.moispano.constant;
  */
 
 public class Constant {
+
     public static int cacheTimeOut = 60*2;
     public static int connectTimeOut = 10;
     public static int readTimeOut = 30;
